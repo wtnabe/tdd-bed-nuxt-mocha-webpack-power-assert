@@ -15,11 +15,27 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader'
+        loader: 'vue-loader',
+        options: {
+          transformToRequire: {
+            video: '',
+            source: '',
+            img: '',
+            image: ''
+          }
+        }
       },
       {
         test: /\.js$/,
         loader: 'babel-loader'
+      },
+      {
+        test: /\.(png|jpe?g|gif|svg)$/,
+        loader: 'null-loader'
+      },
+      {
+        test: /\.(woff2?|eot|ttf|otf)(\?.*)?$/,
+        loader: 'null-loader'
       }
     ]
   }
