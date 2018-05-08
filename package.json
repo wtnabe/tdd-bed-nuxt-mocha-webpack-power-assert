@@ -9,7 +9,7 @@
     "build": "nuxt build",
     "start": "nuxt start -H 0.0.0.0",
     "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "lint": "NODE_ENV=test eslint --ext .js,.vue --ignore-pattern node_modules --ignore-pattern .nuxt --ignore-pattern _nuxt .",
     "precommit": "npm run lint",
     "test": "cross-env NODE_ENV=test mocha-webpack --webpack-config test/webpack.config.js --require test/setup.js test/**/*.spec.js"
   },
